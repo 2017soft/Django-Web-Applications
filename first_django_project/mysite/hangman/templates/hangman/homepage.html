@@ -24,6 +24,7 @@
 
 <h2> Start your game here </h2> 
 
+{% if unknown_word.check_game_success == 0 %}
 <form action="{% url 'hangman:guess' %}" method="post">
 {% csrf_token %}
   <fieldset>
@@ -34,6 +35,7 @@
   <input type="reset" value="Click here to clear the input box">
   <input type="submit" value="Guess">
 </form>
+{% endif %}
 
 {% if unknown_word.check_game_success == 0 %}
 <form action="{% url 'hangman:quit_game' %}" method="post">
