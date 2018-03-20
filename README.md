@@ -1,7 +1,6 @@
 # Django-Web-Applications
-Hello everyone! This is my first web application project, the word game Hangman.
-
-You can play Hangman locally on a website.
+Hello everyone! After reading the Django Tuturial online and following the instructions to create a sample Poll Application, 
+I created my first web application project, which allows users to play the word game Hangman locally on a website.
 
 Here is the instructions about how to open the website: (for Mac OS)
 
