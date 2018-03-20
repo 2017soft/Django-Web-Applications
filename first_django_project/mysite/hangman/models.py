@@ -11,6 +11,8 @@ line = inFile.readline()
     # wordlist: list of strings
 wordlist = line.split()
 
+# Now wordlist stores all the possible words from the database
+
 class Secret(models.Model):
     secret_word = models.CharField(max_length=200)
     guesses_remaining = models.IntegerField(default=6)
@@ -29,6 +31,8 @@ class Secret(models.Model):
         return get_available_letters(self.letters_guessed)
     def get_all_hints(self):
         return self.hint_list
+    def total_number_of_hints(self):
+        return len(self.hint_list)
     def get_hints_times(self):
         return self.hints_remaining
     def get_guesses_times(self):
