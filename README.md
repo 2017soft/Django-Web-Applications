@@ -1,5 +1,5 @@
 # Django-Web-Applications
-Hello everyone! After reading the Django Tuturial online and following the instructions to create a sample Poll Application, 
+Hello everyone! After reading the Django Tuturial online and following the instructions to create a sample Poll application, 
 I created my first web application project, which allows users to play the word game Hangman locally on a website.
 
 Here is the instructions about how to open the website: (for Mac OS)
