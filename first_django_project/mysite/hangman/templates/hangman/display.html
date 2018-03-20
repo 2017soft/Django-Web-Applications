@@ -17,6 +17,9 @@
 <a href="{% url 'hangman:homepage' %}">Click here to return to the game page</a>
 <br>
 <h2> Hint </h2>
+{% if unknown_word.total_number_of_hints %}
+<h3> These are the possible words that can be formed by the current known letters: </h3>
+{% endif %}
 <ul>
   {% for word in unknown_word.get_all_hints %}
     <li> {{word}} </li>
