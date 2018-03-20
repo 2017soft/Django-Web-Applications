@@ -8,10 +8,10 @@ Here is the instructions about how to open the website: (for Mac OS)
 
 2. Install Pipenv and Postgres (by running "pip install pipenv" and "pip install Postgres").
 
-3. Clone this respository by running "git clone https://github.com/2017soft/Django-Web-Applications.git" so that you can open
-   the website locally
+3. Clone this respository by running "git clone https://github.com/2017soft/Django-Web-Applications.git" on Terminal so that
+   you can open the website locally
 
-4. Once having a local version of the respository "Django-Web-Applications", cd into this respository
+4. Once having a local version of the respository "Django-Web-Applications", cd into this respository.
 
 5. Run "cd first_django_project" and then "cd mysite".
 
