@@ -22,14 +22,12 @@ def load_words():
     Depending on the size of the word list, this function may
     take a while to finish.
     """
-    print("Loading word list from file...")
     # inFile: file
     inFile = open(WORDLIST_FILENAME, 'r')
     # line: string
     line = inFile.readline()
     # wordlist: list of strings
     wordlist = line.split()
-    print("  ", len(wordlist), "words loaded.")
     return wordlist
 
 
@@ -451,6 +449,7 @@ if __name__ == "__main__":
     
     # To test part 3 re-comment out the above lines and 
     # uncomment the following two lines. 
-    
+    '''
     secret_word = choose_word(wordlist)
     hangman_with_hints(secret_word)
+    '''
