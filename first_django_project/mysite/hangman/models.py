@@ -1,5 +1,5 @@
 from django.db import models
-from hangman.source_code.required_functions import get_guessed_word, get_available_letters, is_word_guessed, match_with_gaps
+from hangman.source_code.hangman import get_guessed_word, get_available_letters, is_word_guessed, match_with_gaps
 import string
 
 # Create your models here.
