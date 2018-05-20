@@ -99,4 +99,3 @@ ENV/
 
 # mypy
 .mypy_cache/
-first_django_project/mysite/hangman/source_code/hangman.py/cache
