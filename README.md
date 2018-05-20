@@ -2,8 +2,6 @@
 Hello everyone! After reading the Django Tuturial online and following the instructions to create a sample Poll application, 
 I created my first web application project, which allows users to play the word game Hangman locally on a website. This project is inspired by one of my course projects for a Python programming course on MIT OpenCourseWare, so one of the files in this project contain helper functions written for that particular assignment question.
 
-("the file that contains the helper functions is not available now, so this application may not be used right now.")
-
 Here is the instructions about how to open the website: (for Mac OS)
 
 1. Install Python 3.6 or above.
