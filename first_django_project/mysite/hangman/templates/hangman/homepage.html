@@ -1,68 +1,73 @@
-<h1> Hangman </h1>
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1> Hangman </h1>
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<h2> Instructions </h2>
-<ul>
-  <li> To guess a letter, please enter a lowercase letter in the text box and click the "Guess" button below. </li>
-  <li> You have 6 chances to guess the letters. You lose a guess if you guess a wrong letter. </li>
-  <li> You have a total of 3 warnings, which occur when you either guess a letter 
-       that has already been guessed or enter an invalid answer. 
-       (eg. numbers, capital letters, etc.) </li>
-  <li> If you received the 3rd warning, you automatically lose 1 guess. </li>
-  <li> The result page will remind you of the current status of your game.
-       (eg. all the letters that have not been guessed yet, shown as remaining letters)
-  <li> If you already get the complete word, please enter the complete word in lowercase letters. </li>
-  <li> To quit the game and see the correct word, please click the "Quit" button below . </li>
-  <li> To start another game with a different word, please click the "Restart" button below. </li>
-  <li> If you require some hints, please click the "get hints" button below to get the list of possible words. </li>
-  <li> Keep in mind that you only have 2 hints per game. The "get hints" button automatically disappears
-       when you use up all the hints. </li>
-</ul>
+    <h2> Instructions </h2>
+    <ul>
+      <li> To guess a letter, please enter a lowercase letter in the text box and click the "Guess" button below. </li>
+      <li> You have 6 chances to guess the letters. You lose a guess if you guess a wrong letter. </li>
+      <li> You have a total of 3 warnings, which occur when you either guess a letter 
+          that has already been guessed or enter an invalid answer. 
+          (eg. numbers, capital letters, etc.) </li>
+      <li> If you received the 3rd warning, you automatically lose 1 guess. </li>
+      <li> The result page will remind you of the current status of your game.
+          (eg. all the letters that have not been guessed yet, shown as remaining letters) </li>
+      <li> If you already get the complete word, please enter the complete word in lowercase letters. </li>
+      <li> To quit the game and see the correct word, please click the "Quit" button below . </li>
+      <li> To start another game with a different word, please click the "Restart" button below. </li>
+      <li> If you require some hints, please click the "get hints" button below to get the list of possible words. </li>
+      <li> Keep in mind that you only have 2 hints per game. The "get hints" button automatically disappears
+          when you use up all the hints. </li>
+    </ul>
 
-<br>
+    <br>
 
-<h2> Start your game here </h2> 
+    <h2> Start your game here </h2> 
 
-{% if unknown_word.check_game_success == 0 %}
-<form action="{% url 'hangman:guess' %}" method="post">
-{% csrf_token %}
-  <fieldset>
-    <legend> Make a guess </legend>
-    <label for="guess"> Please enter your answer here: </label>
-    <input type="text" name="letter" id="guess" autofocus><br>
-  </fieldset>
-  <input type="reset" value="Click here to clear the input box">
-  <input type="submit" value="Guess">
-</form>
-{% endif %}
+    {% if unknown_word.check_game_success == 0 %}
+    <form action="{% url 'hangman:guess' %}" method="post">
+    {% csrf_token %}
+      <fieldset>
+        <legend> Make a guess </legend>
+        <label for="guess"> Please enter your answer here: </label>
+        <input type="text" name="letter" id="guess" autofocus><br>
+      </fieldset>
+      <input type="reset" value="Click here to clear the input box">
+      <input type="submit" value="Guess">
+    </form>
+    {% endif %}
 
-{% if unknown_word.check_game_success == 0 %}
-<form action="{% url 'hangman:quit_game' %}" method="post">
-{% csrf_token %}
-  <fieldset>
-    <legend> Want to quit the game? </legend>
-    <input id="quit_game" type="submit" value="Quit">
-  </fieldset>
-</form>
-{% endif %}
+    {% if unknown_word.check_game_success == 0 %}
+    <form action="{% url 'hangman:quit_game' %}" method="post">
+    {% csrf_token %}
+      <fieldset>
+        <legend> Want to quit the game? </legend>
+        <input id="quit_game" type="submit" value="Quit">
+      </fieldset>
+    </form>
+    {% endif %}
 
-<form action="{% url 'hangman:restart' %}" method="post">
-{% csrf_token %}
-  <fieldset>
-    <legend> Want to start another game? </legend>
-    <input id="restart" type="submit" value="Restart">
-  </fieldset>
-</form>
+    <form action="{% url 'hangman:restart' %}" method="post">
+    {% csrf_token %}
+      <fieldset>
+        <legend> Want to start another game? </legend>
+        <input id="restart" type="submit" value="Restart">
+      </fieldset>
+    </form>
 
-{% if unknown_word.get_hints_times and unknown_word.check_game_success == 0 %}
-<form action="{% url 'hangman:hint' %}" method="post">
-{% csrf_token %}
-  <fieldset>
-    <legend> Want some hints? </legend>
-    <input id="hint" type="submit" value="get hints">
-  </fieldset>
-</form>
-{% endif %}
+    {% if unknown_word.get_hints_times and unknown_word.check_game_success == 0 %}
+    <form action="{% url 'hangman:hint' %}" method="post">
+    {% csrf_token %}
+      <fieldset>
+        <legend> Want some hints? </legend>
+        <input id="hint" type="submit" value="get hints">
+      </fieldset>
+    </form>
+    {% endif %}
 
-<a href="{% url 'hangman:display' %}">See the Progress?</a>
+    <a href="{% url 'hangman:display' %}">See the Progress?</a>
+  </body>
+</html>
