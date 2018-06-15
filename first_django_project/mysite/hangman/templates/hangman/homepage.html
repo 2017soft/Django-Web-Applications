@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html>
+  <style>
+    fieldset {
+      width: 1000px;
+    }
+
+    li, legend, label {
+      font-size: 125%;
+      font-style: normal;
+    }
+
+    body {
+      background-color: lightblue;
+    }
+  </style>
   <body>
     <h1> Hangman </h1>
 
@@ -25,15 +39,15 @@
 
     <br>
 
-    <h2> Start your game here </h2> 
+    <h2 style="font-style: italic"> Start your game here </h2> 
 
     {% if unknown_word.check_game_success == 0 %}
-    <form action="{% url 'hangman:guess' %}" method="post">
+    <form action="{% url 'hangman:guess' %}" method="post" autocomplete="off">
     {% csrf_token %}
       <fieldset>
         <legend> Make a guess </legend>
         <label for="guess"> Please enter your answer here: </label>
-        <input type="text" name="letter" id="guess" autofocus><br>
+        <input type="text" name="letter" id="guess" autofocus style="width: 100px"><br>
       </fieldset>
       <input type="reset" value="Click here to clear the input box">
       <input type="submit" value="Guess">
@@ -67,7 +81,7 @@
       </fieldset>
     </form>
     {% endif %}
-
-    <a href="{% url 'hangman:display' %}">See the Progress?</a>
+    <br>
+    <a href="{% url 'hangman:display' %}"><button>See the Progress?</button></a>
   </body>
 </html>

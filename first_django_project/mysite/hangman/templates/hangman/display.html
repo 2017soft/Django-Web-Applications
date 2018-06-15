@@ -1,5 +1,29 @@
 <!DOCTYPE html>
 <html>
+  <style>
+    p {
+      font-size: 125%;
+    }
+
+    li {
+      font-size: 120%;
+      color: blueviolet;
+    }
+
+    #guess {
+      font-style: italic;
+      color: green;
+    }
+
+    #game {
+      font-style: oblique;
+      color: purple;
+    }
+
+    body {
+      background-color: lightblue;
+    }
+  </style>
   <body>
     <h1> The result </h1>
 
@@ -11,13 +35,14 @@
     <p> Available Letters: {{ unknown_word.show_available_letters }} </p>
     <br>
     <h2> Want to know what is going on with your guess? </h2>
-    <p> {{unknown_word.show_game_status}} </p>
+    <p id="guess"> {{unknown_word.show_game_status}} </p>
     <br>
     <h2> Have you successfully completed the game? </h2>
-    <p> {{unknown_word.get_success_or_not}} </p>
+    <p id="game"> {{unknown_word.get_success_or_not}} </p>
 
     <br>
-    <a href="{% url 'hangman:homepage' %}">Click here to return to the game page</a>
+
+    <a href="{% url 'hangman:homepage' %}"><button>Click here to return to the game page</button></a>
     <br>
     <h2> Hint </h2>
     {% if unknown_word.total_number_of_hints %}
