@@ -23,6 +23,12 @@
     body {
       background-color: lightblue;
     }
+
+    button {
+      width: 250px;
+      height: 50px;
+      font-size: 120%;
+    }
   </style>
   <body>
     <h1> The result </h1>
@@ -42,7 +48,7 @@
 
     <br>
 
-    <a href="{% url 'hangman:homepage' %}"><button>Click here to return to the game page</button></a>
+    <a href="{% url 'hangman:homepage' %}"><button autofocus>Click here to return to the game page</button></a>
     <br>
     <h2> Hint </h2>
     {% if unknown_word.total_number_of_hints %}

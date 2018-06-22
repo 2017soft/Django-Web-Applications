@@ -6,9 +6,7 @@ import string
 WORDLIST_FILENAME = "words.txt"
 
 inFile = open(WORDLIST_FILENAME, 'r')
-    # line: string
 line = inFile.readline()
-    # wordlist: list of strings
 wordlist = line.split()
 
 # Now wordlist stores all the possible words from the database

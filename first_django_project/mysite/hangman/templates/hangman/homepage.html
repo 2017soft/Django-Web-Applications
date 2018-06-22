@@ -13,9 +13,32 @@
     body {
       background-color: lightblue;
     }
+
+    #main {
+      color: purple;
+    }
+
+    button {
+      width: 200px;
+      height: 50px;
+      font-size: 125%;
+    }
+
+    input[type="submit"] {
+      height: 50px;
+      width: 100px;
+      font-size: 120%;
+    }
+    
+    input[type="reset"] {
+      height: 50px;
+      width: 250px;
+      font-size: 120%;
+    }
+
   </style>
   <body>
-    <h1> Hangman </h1>
+    <h1 id="main">Let's play Hangman here!</h1>
 
     {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
@@ -45,14 +68,19 @@
     <form action="{% url 'hangman:guess' %}" method="post" autocomplete="off">
     {% csrf_token %}
       <fieldset>
-        <legend> Make a guess </legend>
+        <legend> Make a guess here</legend>
         <label for="guess"> Please enter your answer here: </label>
-        <input type="text" name="letter" id="guess" autofocus style="width: 100px"><br>
+        <input type="text" name="letter" id="guess" autofocus style="width: 100px">
+        <label> (put either a letter or a complete word)</label>
+        <br>
+        <br>
+        <input type="reset" value="Click here to clear the input box">
+        <input type="submit" value="Guess">
       </fieldset>
-      <input type="reset" value="Click here to clear the input box">
-      <input type="submit" value="Guess">
     </form>
     {% endif %}
+
+    <br>
 
     {% if unknown_word.check_game_success == 0 %}
     <form action="{% url 'hangman:quit_game' %}" method="post">
@@ -64,6 +92,8 @@
     </form>
     {% endif %}
 
+    <br>
+
     <form action="{% url 'hangman:restart' %}" method="post">
     {% csrf_token %}
       <fieldset>
@@ -71,6 +101,8 @@
         <input id="restart" type="submit" value="Restart">
       </fieldset>
     </form>
+
+    <br>
 
     {% if unknown_word.get_hints_times and unknown_word.check_game_success == 0 %}
     <form action="{% url 'hangman:hint' %}" method="post">
