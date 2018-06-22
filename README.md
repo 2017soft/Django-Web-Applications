@@ -4,7 +4,7 @@ I created my first web application project, which allows users to play the word 
 
 Here is the instructions about how to open the website: (for Mac OS)
 
-1. Install Python 3.6 or above.
+1. Install Django and Python 3.6 or above.
 
 2. Install Pipenv and Postgres (by running "pip install pipenv" and "pip install Postgres").
 
